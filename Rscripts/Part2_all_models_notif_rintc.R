@@ -70,6 +70,8 @@ regMat
 names(regMat) <- regressors
 regMat
 
+#Dependent variable changed to all notified TB cases, unlike in the primary analysis
+#which is only on the confirmed notified TB cases.
 allModelsList <- apply(regMat, 1, function(x) {
   paste(c("total_notified ~ 1", regressors[x]),
     collapse = " + "
